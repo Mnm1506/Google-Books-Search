@@ -1,12 +1,12 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { Input, FormBtn } from "../components/Form";
 import Jumbotron from "../components/Jumbotron";
 import GoogleAPI from "../utils/GoogleAPI"
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import SaveButton from "../components/SaveBtn"
-import API from "../utils/API" 
-import Button from "../components/Button";
+import API from "../utils/API"
+import Button from "../components/ViewBtn";
 
 
 
@@ -26,7 +26,7 @@ function Search() {
     // Then reload books from the database
     function handleFormSubmit(event) {
         event.preventDefault();
-        GoogleAPI.searchGoogle(formObject.searchTerm)
+        GoogleAPI.goolgeSearch(formObject.searchTerm)
             .then(res => {
                 setBooks(res.data.items)
                 console.log(res.data.items)
@@ -37,10 +37,8 @@ function Search() {
     };
 
     function saveBook(title, description, author, image, link) {
- 
-
         let checkedAuthor
-        if(author == null){
+        if (author == null) {
             checkedAuthor = "Unlisted"
         } else {
             checkedAuthor = author[0]
@@ -53,8 +51,8 @@ function Search() {
             image: image,
             link: link
         })
-        .then(alert("Saved Successfully!"))
-        .catch(err => console.log(err))
+            .then(alert("Book Saved Successfully!"))
+            .catch(err => console.log(err))
     }
 
     return (<div>
@@ -62,13 +60,13 @@ function Search() {
             <Row>
                 <Col size="md-4">
                     <Jumbotron>
-                        <h1> Interesting Books</h1>
+                        <h1> Search Books</h1>
                     </Jumbotron>
                     <form>
                         <Input
                             onChange={handleInputChange}
                             name="searchTerm"
-                            placeholder="Keyword(s)"
+                            placeholder="Book title or keyword"
                         />
                         <FormBtn
                             disabled={!(formObject.searchTerm)}
@@ -80,12 +78,12 @@ function Search() {
                 </Col>
                 <Col size="md-8 sm-12">
                     <Jumbotron>
-                        <h1>Results</h1>
+                        <h1>Results here</h1>
                     </Jumbotron>
                     {books.length ? (
                         <List>
                             {books.map(book => (
-                                <ListItem>
+                                <ListItem key={book._id}>
                                     <strong>
                                         <img src={book.volumeInfo.imageLinks.thumbnail} alt="search result"></img>
                                         {book.volumeInfo.title} by  <span id="authorList">{book.volumeInfo.authors}</span>
