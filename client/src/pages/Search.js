@@ -29,7 +29,7 @@ function Search() {
         GoogleAPI.goolgeSearch(formObject.searchTerm)
             .then(res => {
                 setBooks(res.data.items)
-                console.log(res.data.items)
+                
             })
             .catch(error => {
                 console.log(error.response)
