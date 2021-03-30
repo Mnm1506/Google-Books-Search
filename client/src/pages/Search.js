@@ -8,8 +8,6 @@ import SaveButton from "../components/SaveBtn"
 import API from "../utils/API"
 import Button from "../components/ViewBtn";
 
-
-
 function Search() {
 
     // Setting our component's initial state
@@ -60,7 +58,7 @@ function Search() {
             <Row>
                 <Col size="md-4">
                     <Jumbotron>
-                        <h1> Search Books</h1>
+                        <h1> Search Books </h1>
                     </Jumbotron>
                     <form>
                         <Input
