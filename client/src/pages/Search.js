@@ -4,11 +4,11 @@ import Jumbotron from "../components/Jumbotron";
 import GoogleAPI from "../utils/GoogleAPI"
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import SaveButton from "../components/SaveBtn"
-import API from "../utils/API"
-import Button from "../components/ViewBtn";
+import API from "../utils/API";
+import ViewBtn from "../components/ViewBtn";
+import SaveBtn from "../components/SaveBtn";
 
-function Search() {
+function Books() {
 
     // Setting our component's initial state
     const [books, setBooks] = useState([])
@@ -27,7 +27,6 @@ function Search() {
         GoogleAPI.goolgeSearch(formObject.searchTerm)
             .then(res => {
                 setBooks(res.data.items)
-                
             })
             .catch(error => {
                 console.log(error.response)
@@ -86,8 +85,8 @@ function Search() {
                                         <img src={book.volumeInfo.imageLinks.thumbnail} alt="search result"></img>
                                         {book.volumeInfo.title} by  <span id="authorList">{book.volumeInfo.authors}</span>
                                     </strong>
-                                    <SaveButton onClick={() => saveBook(book.volumeInfo.title, book.volumeInfo.description, book.volumeInfo.authors, book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.previewLink)} />
-                                    <Button link={book.volumeInfo.previewLink} />
+                                    <SaveBtn onClick={() => saveBook(book.volumeInfo.title, book.volumeInfo.description, book.volumeInfo.authors, book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.previewLink)} />
+                                    <ViewBtn link={book.volumeInfo.previewLink} />
                                 </ListItem>
                             ))}
                         </List>
@@ -101,4 +100,4 @@ function Search() {
     </div>)
 }
 
-export default Search
+export default Books
