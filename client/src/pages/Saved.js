@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
@@ -6,6 +5,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
+import ViewBtn from "../components/ViewBtn";
 
 
 function Books() {
@@ -33,6 +33,8 @@ function Books() {
       .then(res => loadBooks())
       .catch(err => console.log(err));
   }
+
+
   return (
     <Container fluid>
       <Row>
@@ -50,7 +52,7 @@ function Books() {
                       {book.title} by  <span id="authorList">{book.author}</span>
                     </strong>
                   </Link>
-
+                  <ViewBtn link={book.link} />
                   <DeleteBtn onClick={() => deleteBook(book._id)} />
                 </ListItem>
               ))}
