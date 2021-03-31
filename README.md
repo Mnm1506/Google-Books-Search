@@ -1,29 +1,55 @@
-# Create React Express App
+# Google Books Search
+  ![badge](https://img.shields.io/badge/license-MIT-brightgreen)
 
-## About This Boilerplate
+  ## Description :
+    This is a React-based Google Books Search app. 
+    This assignment requires you to create React components, work with helper/util functions, and utilize React lifecycle methods to query and display books based on user searches. 
+    You'll also use Node, Express and MongoDB so that users can save books to review or purchase later.
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+  ## Link to deployed app :
+  - https://floating-thicket-84022.herokuapp.com/
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+  ## Table of Contents :
+  - [Description](#description)
+  - [Link](#Link)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Technologies](#Technologies)
+  - [Qeustions](#qeustions)
+  
+  ## Screenshots :
+  - ![image](https://user-images.githubusercontent.com/71415480/113084963-9bd4a300-91a4-11eb-89ef-52cb6da53f16.png)
 
-## Starting the app locally
+  - ![Captur](https://user-images.githubusercontent.com/71415480/113085374-4baa1080-91a5-11eb-9451-8c8abacbdf2a.PNG)
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+  ## Installation :
+   npm install
+   npm start
 
-```
-npm install
-```
+   ## Usage :
+    - Search page : User can search for books via the Google Books API and render them here. 
+       User has the option to "View" a book, bringing them to the book on Google Books, or "Save" a book, saving it to the Mongo database.
+       
+    - Saved page : Renders all books saved to the Mongo database. 
+       User has an option to "View" the book, bringing them to the book on Google Books, or "Delete" a book, removing it from the Mongo database.
 
-This should install node modules within the server and the client folder.
+  ## License :
+  This application is covered by the MIT license.
+  ![badge](https://img.shields.io/badge/license-MIT-brightgreen)
 
-After both installations complete, run the following command in your terminal:
+  ## Contributing :
+   Moussa Nait Merabet
 
-```
-npm start
-```
+  ## Technologies :
+   - React
+   - Node
+   - Express
+   
+  ## Questions :
+   Contact me 
+   
+   - Find me on GitHub: [https://github.com/Mnm1506](https://github.com/https://github.com/Mnm1506)
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+   - Email me if you have any questions: [moussanm2014@gmail.com](https://www.google.com/gmail/)
